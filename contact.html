@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HANAN - Contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") document.documentElement.classList.add("dark");
+    </script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-brand: #7c3aed;
+        --color-muted: #6b5b7e;
+        --font-display: "Sora", sans-serif;
+        --font-sans: "Inter", system-ui, sans-serif;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 5vw + 1rem, 4rem);
+        font-family: var(--font-display);
+      }
+
+      h2 {
+        font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+        font-family: var(--font-display);
+      }
+
+      body {
+        font-family: var(--font-sans);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen">
+
+    <header class="flex items-center justify-between px-8 py-4 border-b border-zinc-200 dark:border-zinc-700">
+      <a href="index.html" class="text-brand font-bold font-display text-2xl no-underline">HANAN</a>
+      <nav>
+        <ul class="flex gap-6 list-none m-0 p-0">
+          <li><a href="index.html" class="text-zinc-900 dark:text-zinc-100 no-underline font-semibold hover:text-brand">Home</a></li>
+          <li><a href="projects.html" class="text-zinc-900 dark:text-zinc-100 no-underline font-semibold hover:text-brand">Projects</a></li>
+          <li><a href="contact.html" class="text-zinc-900 dark:text-zinc-100 no-underline font-semibold hover:text-brand">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="px-3 py-1 rounded border border-zinc-300 dark:border-zinc-600 text-sm cursor-pointer">
+        Toggle Dark Mode
+      </button>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-8">
+
+      <h2 class="mb-4">Contact Me</h2>
+      <p class="mb-6">Feel free to reach out. I read every message.</p>
+
+      <address class="not-italic mb-8 text-zinc-500 dark:text-zinc-400">
+        <p class="mb-2">Email: <a href="mailto:ninaumer319@email.com" class="text-brand underline">ninaumer319@email.com</a></p>
+        <p>GitHub: <a href="https://github.com/Hanan319" class="text-brand underline">github.com/Hanan319</a></p>
+      </address>
+
+      <h3 class="font-display font-bold text-xl mb-4">Send a Message</h3>
+
+      <form action="#" method="POST" class="flex flex-col max-w-md">
+
+        <label for="name" class="font-semibold mb-1">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="ABEBE" required
+          class="mb-4 px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" />
+
+        <label for="email" class="font-semibold mb-1">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="ABEBE@example.com" required
+          class="mb-4 px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" />
+
+        <label for="message" class="font-semibold mb-1">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required
+          class="mb-4 px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100"></textarea>
+
+        <button type="submit"
+          class="bg-brand text-white px-4 py-2 rounded cursor-pointer w-fit hover:opacity-90">
+          Send Message
+        </button>
+
+      </form>
+
+    </main>
+
+    <footer class="px-8 py-4 border-t border-zinc-200 dark:border-zinc-700 text-sm text-muted">
+      <p>Built by HA | <a href="https://github.com/Hanan319" class="text-brand">github.com/Hanan319</a></p>
+    </footer>
+    <script>
+      document.getElementById("theme-toggle").addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      });
+    </script>
+
+  </body>
+</html>
